@@ -4,9 +4,9 @@ import Pricing from "./pages/Pricing"
 import Projects from "./pages/Projects"
 import Preview from "./pages/Preview"
 import Community from "./pages/Community"
-import { View } from "lucide-react"
 import MyProject from "./pages/MyProject"
 import NavBar from "./components/NavBar"
+import View from "./pages/View"
 const App = () => {
   const { pathname } = useLocation()
 

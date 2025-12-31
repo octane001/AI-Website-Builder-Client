@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { Loader2Icon, PlusIcon, TrashIcon } from "lucide-react";
+import { Loader2Icon } from "lucide-react";
 
 import type { Project } from "../types";
 import { dummyProjects } from "../assets/assets";
@@ -13,6 +13,8 @@ const Community = () => {
 
   const fetchProjects = async () => {
     setProjects(dummyProjects);
+    // console.log(projects , "Hello test");
+
 
     // Simulate loading
     setTimeout(() => {
@@ -40,8 +42,6 @@ const Community = () => {
             {/* Header */}
             <div className="flex items-center justify-between mb-12">
               <h1 className="text-2xl font-medium text-white">Published Projects</h1>
-
-
             </div>
 
             {/* Cards */}
@@ -55,6 +55,7 @@ const Community = () => {
                 >
                   {/* Preview */}
                   <div className="relative w-full h-40 bg-gray-900 overflow-hidden border-b border-gray-800">
+
                     {project.current_code ? (
                       <iframe
                         srcDoc={project.current_code}
@@ -95,7 +96,7 @@ const Community = () => {
 
                       <div className="flex gap-3 text-sm">
                         <button
-                          
+
                           className="px-3 py-1.5 bg-white/10 hover:bg-white/15 rounded-md transition-colors flex items-center gap-2"
                         >
                           <span className="bg-gray-200 size-4.5 rounded-full text-black font-semibold flex items-center justify-center">{project.user?.name?.slice(0, 1)}</span>
@@ -104,8 +105,6 @@ const Community = () => {
                       </div>
                     </div>
                   </div>
-
-                  {/* Delete */}
                 </Link>
               ))}
             </div>
