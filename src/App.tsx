@@ -1,4 +1,5 @@
 import { Route, Routes, useLocation } from "react-router-dom"
+import { Toaster } from 'sonner'
 import Home from "./pages/Home"
 import Pricing from "./pages/Pricing"
 import Projects from "./pages/Projects"
@@ -7,12 +8,16 @@ import Community from "./pages/Community"
 import MyProject from "./pages/MyProject"
 import NavBar from "./components/NavBar"
 import View from "./pages/View"
+import AuthPage from "./pages/auth/AuthPage"
+import Settings from "./pages/Settings"
+
 const App = () => {
   const { pathname } = useLocation()
 
   const hideNavBar = pathname.startsWith('/projects/') && pathname !== '/projects/' || pathname.startsWith('/view/') || pathname.startsWith('/preview/')
   return (
     <div>
+      <Toaster />
       {!hideNavBar && <NavBar />}
       <Routes>
         <Route path='/' element={<Home />} />
@@ -23,6 +28,8 @@ const App = () => {
         <Route path='/preview/:projectId/:versionId' element={<Preview />} />
         <Route path='/community' element={<Community />} />
         <Route path='/view/:projectId' element={<View />} />
+        <Route path="/auth/:pathname" element={<AuthPage />} />
+        <Route path="/account/settings" element={<Settings />} />
       </Routes>
     </div>
   )
