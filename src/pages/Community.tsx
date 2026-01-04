@@ -18,7 +18,7 @@ const Community = () => {
       const { data } = await api.get('/api/project/published');
       setProjects(data.projects);
       setLoading(false);
-    } catch (error: unknown) {
+    } catch (error: any) {
       console.log(error);
       toast.error(error?.response?.data?.message || error.message);
     }

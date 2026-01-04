@@ -20,7 +20,7 @@ const MyProject = () => {
             const { data } = await api.get('/api/user/projects');
             setProjects(data.projects);
             setLoading(false);
-        } catch (error: unknown) {
+        } catch (error: any) {
             console.log(error);
             toast.error(error?.response?.data?.message || error.message);
         }
@@ -36,7 +36,7 @@ const MyProject = () => {
             const { data } = await api.delete(`/api/project/${projectId}`);
             toast.success(data.message);
             fetchProjects();
-        } catch (error: unknown) {
+        } catch (error: any) {
             console.log(error);
             toast.error(error?.response?.data?.message || error.message);
         }

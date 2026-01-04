@@ -37,7 +37,7 @@ const ProjectPreview = forwardRef<
         const iframeRef = useRef<HTMLIFrameElement>(null);
 
         const [selectedElement, setSelectedElement] =
-            useState<unknown>(null);
+            useState<any>(null);
 
         const resolutions = {
             phone: 'w-[412px]',

@@ -14,7 +14,7 @@ interface EditorPannelProps {
             fontSize: string;
         };
     } | null;
-    onUpdate: (updates: unknown) => void;
+    onUpdate: (updates: any) => void;
     onClose: () => void;
 }
 

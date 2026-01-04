@@ -19,7 +19,7 @@ const View: React.FC = () => {
       const { data } = await api.get(`/api/project/published/${projectId}`);
       setCode(data.code);
       setLoading(false);
-    } catch (error: unknown) {
+    } catch (error: any) {
       console.log(error);
       toast.error(error?.response?.data?.message || error.message);
     }

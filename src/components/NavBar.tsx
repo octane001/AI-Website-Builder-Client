@@ -16,7 +16,7 @@ const NavBar = () => {
         try {
             const { data } = await api.get('/api/user/credits')
             setCredits(data.credits)
-        } catch (error: unknown) {
+        } catch (error: any) {
             toast.error(error?.response?.data?.message || error.message)
             console.log(error);
 

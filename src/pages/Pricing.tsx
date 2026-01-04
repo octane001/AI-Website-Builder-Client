@@ -24,7 +24,7 @@ const Pricing: React.FC = () => {
       const { data } = await api.post(`/api/user/purchase-credits`, { planId })
       // eslint-disable-next-line react-hooks/immutability
       window.location.href = data.payment_link;
-    } catch (error: unknown) {
+    } catch (error: any) {
       toast.error(error?.response?.data?.message || error.message);
       console.log(error)
     }

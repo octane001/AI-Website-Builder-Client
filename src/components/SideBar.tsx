@@ -38,7 +38,7 @@ const SideBar = ({ isMenuOpen, project, setProject, isGenerating, setIsGeneratin
             toast.success(data.message);
             setProject(data2.project)
             setIsGenerating(false)
-        } catch (error: unknown) {
+        } catch (error: any) {
             setIsGenerating(false)
             toast.error(error?.response?.data?.message || error.message);
             console.log(error);
@@ -60,7 +60,7 @@ const SideBar = ({ isMenuOpen, project, setProject, isGenerating, setIsGeneratin
             toast.success(data.message)
             setInput('');
             clearInterval(interval)
-        } catch (error: unknown) {
+        } catch (error: any) {
             setIsGenerating(false);
             toast.error(error?.response?.data?.message || error.message);
             console.log(error);

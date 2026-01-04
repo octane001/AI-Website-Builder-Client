@@ -41,7 +41,7 @@ const Projects: React.FC = () => {
       setProject(data.project);
       setIsGenerating(data.project.current_code ? false : true)
       setLoading(false)
-    } catch (error: unknown) {
+    } catch (error: any) {
       toast.error(error?.response?.data?.message || error.message)
       console.log(error);
     }
@@ -96,7 +96,7 @@ const Projects: React.FC = () => {
         { code }
       );
       toast.success(data.message);
-    } catch (error: unknown) {
+    } catch (error: any) {
       toast.error(error.response?.data?.message || error.message);
       console.log(error);
     } finally {
