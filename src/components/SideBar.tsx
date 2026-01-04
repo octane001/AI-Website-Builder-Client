@@ -21,7 +21,7 @@ const SideBar = ({ isMenuOpen, project, setProject, isGenerating, setIsGeneratin
         try {
             const { data } = await api.get(`/api/user/project/${project.id}`);
             setProject(data.project)
-        } catch (error) {
+        } catch (error : any) {
             toast.error(error?.response?.data?.message || error.message);
             console.log(error);
         }
